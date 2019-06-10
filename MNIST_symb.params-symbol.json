@@ -1,0 +1,270 @@
+{
+  "nodes": [
+    {
+      "op": "null", 
+      "name": "data", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "conv1_weight", 
+      "attrs": {
+        "kernel": "(5, 5)", 
+        "num_filter": "32"
+      }, 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "conv1_bias", 
+      "attrs": {
+        "kernel": "(5, 5)", 
+        "num_filter": "32"
+      }, 
+      "inputs": []
+    }, 
+    {
+      "op": "Convolution", 
+      "name": "conv1", 
+      "attrs": {
+        "kernel": "(5, 5)", 
+        "num_filter": "32"
+      }, 
+      "inputs": [[0, 0, 0], [1, 0, 0], [2, 0, 0]]
+    }, 
+    {
+      "op": "null", 
+      "name": "bn1_gamma", 
+      "attrs": {"fix_gamma": "False"}, 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "bn1_beta", 
+      "attrs": {"fix_gamma": "False"}, 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "bn1_moving_mean", 
+      "attrs": {
+        "__init__": "[\"zero\", {}]", 
+        "fix_gamma": "False"
+      }, 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "bn1_moving_var", 
+      "attrs": {
+        "__init__": "[\"one\", {}]", 
+        "fix_gamma": "False"
+      }, 
+      "inputs": []
+    }, 
+    {
+      "op": "BatchNorm", 
+      "name": "bn1", 
+      "attrs": {"fix_gamma": "False"}, 
+      "inputs": [[3, 0, 0], [4, 0, 0], [5, 0, 0], [6, 0, 1], [7, 0, 1]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "act1", 
+      "attrs": {"act_type": "relu"}, 
+      "inputs": [[8, 0, 0]]
+    }, 
+    {
+      "op": "Pooling", 
+      "name": "pool1", 
+      "attrs": {
+        "kernel": "(3, 3)", 
+        "pool_type": "max", 
+        "stride": "(2, 2)"
+      }, 
+      "inputs": [[9, 0, 0]]
+    }, 
+    {
+      "op": "null", 
+      "name": "conv2_weight", 
+      "attrs": {
+        "kernel": "(5, 5)", 
+        "num_filter": "64"
+      }, 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "conv2_bias", 
+      "attrs": {
+        "kernel": "(5, 5)", 
+        "num_filter": "64"
+      }, 
+      "inputs": []
+    }, 
+    {
+      "op": "Convolution", 
+      "name": "conv2", 
+      "attrs": {
+        "kernel": "(5, 5)", 
+        "num_filter": "64"
+      }, 
+      "inputs": [[10, 0, 0], [11, 0, 0], [12, 0, 0]]
+    }, 
+    {
+      "op": "null", 
+      "name": "bn2_gamma", 
+      "attrs": {"fix_gamma": "False"}, 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "bn2_beta", 
+      "attrs": {"fix_gamma": "False"}, 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "bn2_moving_mean", 
+      "attrs": {
+        "__init__": "[\"zero\", {}]", 
+        "fix_gamma": "False"
+      }, 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "bn2_moving_var", 
+      "attrs": {
+        "__init__": "[\"one\", {}]", 
+        "fix_gamma": "False"
+      }, 
+      "inputs": []
+    }, 
+    {
+      "op": "BatchNorm", 
+      "name": "bn2", 
+      "attrs": {"fix_gamma": "False"}, 
+      "inputs": [[13, 0, 0], [14, 0, 0], [15, 0, 0], [16, 0, 1], [17, 0, 1]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "act2", 
+      "attrs": {"act_type": "relu"}, 
+      "inputs": [[18, 0, 0]]
+    }, 
+    {
+      "op": "Pooling", 
+      "name": "pool2", 
+      "attrs": {
+        "kernel": "(3, 3)", 
+        "pool_type": "max", 
+        "stride": "(2, 2)"
+      }, 
+      "inputs": [[19, 0, 0]]
+    }, 
+    {
+      "op": "null", 
+      "name": "conv3_weight", 
+      "attrs": {
+        "kernel": "(3, 3)", 
+        "num_filter": "10"
+      }, 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "conv3_bias", 
+      "attrs": {
+        "kernel": "(3, 3)", 
+        "num_filter": "10"
+      }, 
+      "inputs": []
+    }, 
+    {
+      "op": "Convolution", 
+      "name": "conv3", 
+      "attrs": {
+        "kernel": "(3, 3)", 
+        "num_filter": "10"
+      }, 
+      "inputs": [[20, 0, 0], [21, 0, 0], [22, 0, 0]]
+    }, 
+    {
+      "op": "Pooling", 
+      "name": "pool3", 
+      "attrs": {
+        "global_pool": "True", 
+        "kernel": "(1, 1)", 
+        "pool_type": "avg"
+      }, 
+      "inputs": [[23, 0, 0]]
+    }, 
+    {
+      "op": "Flatten", 
+      "name": "flatten", 
+      "inputs": [[24, 0, 0]]
+    }, 
+    {
+      "op": "null", 
+      "name": "softmax_label", 
+      "inputs": []
+    }, 
+    {
+      "op": "SoftmaxOutput", 
+      "name": "softmax", 
+      "inputs": [[25, 0, 0], [26, 0, 0]]
+    }
+  ], 
+  "arg_nodes": [
+    0, 
+    1, 
+    2, 
+    4, 
+    5, 
+    6, 
+    7, 
+    11, 
+    12, 
+    14, 
+    15, 
+    16, 
+    17, 
+    21, 
+    22, 
+    26
+  ], 
+  "node_row_ptr": [
+    0, 
+    1, 
+    2, 
+    3, 
+    4, 
+    5, 
+    6, 
+    7, 
+    8, 
+    11, 
+    12, 
+    13, 
+    14, 
+    15, 
+    16, 
+    17, 
+    18, 
+    19, 
+    20, 
+    23, 
+    24, 
+    25, 
+    26, 
+    27, 
+    28, 
+    29, 
+    30, 
+    31, 
+    32
+  ], 
+  "heads": [[27, 0, 0]], 
+  "attrs": {"mxnet_version": ["int", 10400]}
+}
